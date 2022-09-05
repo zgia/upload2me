@@ -13,6 +13,7 @@
 
 <script lang="ts">
   // 下面是按需导入引入语言包的方式，如果是全量导入，则此script块都可以去掉
+  // start
   import { defineComponent } from 'vue'
   import { ElConfigProvider } from 'element-plus'
 
@@ -25,7 +26,9 @@
     setup() {
       return {
         locale: zhCn,
+        size: 'large'
       }
     },
   })
+  // end
 </script>

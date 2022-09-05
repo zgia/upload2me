@@ -1,5 +1,5 @@
 import path from 'path'
-import { defineConfig } from 'vite'
+import { defineConfig, splitVendorChunkPlugin } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import ElementPlus from 'unplugin-element-plus/vite'
 import AutoImport from 'unplugin-auto-import/vite'
@@ -24,6 +24,7 @@ export default defineConfig({
       '~/': `${pathSrc}/`,
     },
   },
+  assetsInclude: ['**/*.cnf'],
   css: {
     preprocessorOptions: {
       scss: {
@@ -32,6 +33,7 @@ export default defineConfig({
     },
   },
   plugins: [
+    splitVendorChunkPlugin(),
     vue(),
     ElementPlus({
       useSource: true
@@ -70,4 +72,10 @@ export default defineConfig({
       ]
     }),
   ],
+  server:{
+    cors: {
+      origin: '*',
+      credentials: true
+    }
+  }
 })

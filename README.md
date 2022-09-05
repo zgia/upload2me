@@ -23,8 +23,8 @@ npm run build
 ## Usage
 
 ```bash
-git clone https://github.com/element-plus/element-plus-vite-starter
-cd element-plus-vite-starter
+git clone https://github.com/zgia/upload2me
+cd upload2me
 npm i
 npm run dev
 ```
@@ -32,3 +32,7 @@ npm run dev
 ### Custom theme
 
 See `src/styles/element/index.scss`.
+
+### 参考
+
+https://github.com/element-plus/element-plus-vite-starter

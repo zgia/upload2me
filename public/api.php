@@ -11,6 +11,8 @@ set_exception_handler('exceptionHandler');
 header('Content-type: application/json; charset=utf-8');
 // 跨域
 header('Access-Control-Allow-Origin:*');
+header('Access-Control-Allow-Methods: POST, GET, OPTIONS');
+header('Access-Control-Allow-Headers: Authorization,X-Requested-With,X_Requested_With,X-PINGOTHER,Content-Type'); 
 
 if (empty($_FILES) || empty($_FILES['file']) || $_FILES['file']['error'] != UPLOAD_ERR_OK || ! is_uploaded_file($_FILES['file']['tmp_name'])) {
     output('Uploaded fail.', 1);

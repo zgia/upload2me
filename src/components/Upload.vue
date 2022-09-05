@@ -1,5 +1,5 @@
 <template>
-  <el-upload ref="uploadRef" class="upload-2-me" action="http://localhost:8909/index.php" :on-remove="handleRemove"
+  <el-upload ref="uploadRef" class="upload-2-me" :action="apiUrl" :on-remove="handleRemove"
     :before-remove="beforeRemove" :on-change="handleChange" :before-upload="handleBeforeUpload" :on-error="handleError"
     multiple :auto-upload="false">
     <template #trigger>
@@ -25,11 +25,11 @@
 import { ref } from 'vue'
 import { ElMessage, ElMessageBox } from 'element-plus'
 import type { UploadProps, UploadInstance } from 'element-plus'
-import { toggleDark } from '~/composables';
+import { toggleDark } from '~/composables'
+
+const apiUrl = import.meta.env.VITE_API_URL
 
 const handleRemove: UploadProps['onRemove'] = (uploadFile, uploadFiles) => {
-  console.log(uploadFile)
-
   ElMessage(`已经移除文件 ${uploadFile.name} 。`)
 }
 
